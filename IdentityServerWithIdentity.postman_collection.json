@@ -1,0 +1,80 @@
+{
+	"info": {
+		"_postman_id": "228205e9-4e1c-4698-a5ad-724557ba62d3",
+		"name": "IdentityServerWithIdentity",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CREATE USER",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "GET TOKEN",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "511536EF-F270-4058-80CA-1C89C192F69A",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "frontend.client",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "default"
+						},
+						{
+							"key": "username",
+							"value": "alice",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "Pass123$",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://localhost:5001/connect/token",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TEST USER",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
